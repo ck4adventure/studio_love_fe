@@ -1,0 +1,49 @@
+.header {
+  padding: 0;
+  /* background-color: #2b192e; */
+  display: flex;
+  flex-direction: row;
+}
+
+.header-left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header-right {
+  display: flex;
+  justify-content: right;
+}
+
+.wordmark {
+  font-family: 'Bauhaus';
+  margin-left: 12px;
+  font-size: x-large;
+}
+
+.spin-logo {
+  height: 70px;
+  width: 70px;
+  will-change: filter;
+  transition: filter 300ms;
+}
+/* .spin-logo:hover {
+  filter: drop-shadow(0 0 2em #CE8CA5aa);
+} */
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin-logo:hover {
+    animation: logo-spin infinite 20s linear;
+  }
+}
