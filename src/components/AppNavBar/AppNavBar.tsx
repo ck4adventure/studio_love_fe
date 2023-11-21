@@ -7,7 +7,7 @@ import './AppNavBar.css'
 export default function AppNavBar() {
   return (
     <div className='header'>
-      <AppBar position="static" sx={{ backgroundColor: "rgba(80, 0, 108, 0.75)" }}>
+      <AppBar position="static" sx={{ backgroundColor: "#2b192e" }}>
         <Toolbar>
           <div className='header-left'>
             <a href='/'>
