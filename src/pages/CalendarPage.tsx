@@ -18,7 +18,7 @@ const weekdays = [
 export default function CalendarPage() {
   const formattedWeekdays = weekdays.map(day => day[0].toUpperCase() + day.slice(1).toLowerCase())
   return (
-    <Container maxWidth="lg" sx={{ textAlign: "left" }}>
+    <Container maxWidth="lg" sx={{ textAlign: "left", marginBottom: 4 }}>
       {formattedWeekdays.map(day => <Section name={day}></Section>)}
     </Container>
   )

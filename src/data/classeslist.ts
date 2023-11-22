@@ -1,20 +1,20 @@
 export const ClassesList = [
   {
-    name: "Ashtanga",
-    description: "Ashtanga yoga is one of many branches of yoga",
+    name: "Hip Hop Basics (Beg-Adv)",
+    description: "Learn the basics of hip hop with popular dance hits",
     duration: 75,
-    instructor: "Yogis Name"
+    instructor: "Mary J Blige"
   },
   {
-    name: "Vinyasa",
+    name: "Vinyasa Flow Yoga",
     description: "Vinyasa yoga is one of many branches of yoga",
     duration: 90,
-    instructor: "Yogis Name"
+    instructor: "Jane Fonda"
   },
   {
-    name: "Vinyasa Flow",
-    description: "Vinyasa flow yoga is for people who can't hold still",
+    name: "Gymnastics 1",
+    description: "Beginner tumbling with cartwheels, handstands and tucks",
     duration: 60,
-    instructor: "Yogis Name"
+    instructor: "Simone Biles"
   },
 ]
