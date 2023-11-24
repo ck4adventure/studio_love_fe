@@ -5,17 +5,32 @@ import AppNavBar from './components/AppNavBar/AppNavBar'
 import CalendarPage from './pages/CalendarPage'
 import ErrorBoundary from './components/ErrorBoundary'
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import AdminMainPage from './pages/AdminPage'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <CalendarPage />,
+  }, {
+    path: "/admin",
+    element: <AdminMainPage />,
+  }
+]);
+
 
 function App() {
 
   return (
     <>
-      <AppNavBar />
       <ErrorBoundary>
-        <CalendarPage />
-
+        <AppNavBar />
+        <RouterProvider router={router} />
+        <AppFooterBar />
       </ErrorBoundary>
-      <AppFooterBar />
     </>
   )
 }
