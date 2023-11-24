@@ -1,25 +1,14 @@
 import './App.css'
 import './fonts/ITC_Bauhaus_Medium.otf'
-import AppFooterBar from './components/AppFooterBar/AppFooterBar'
-import AppNavBar from './components/AppNavBar/AppNavBar'
-import CalendarPage from './pages/CalendarPage'
-import ErrorBoundary from './components/ErrorBoundary'
-
 import {
-  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import AdminMainPage from './pages/AdminPage'
+import AppFooterBar from './components/AppFooterBar/AppFooterBar'
+import AppNavBar from './components/AppNavBar/AppNavBar'
+import { router } from './routes/routes'
+import ErrorBoundary from './components/ErrorBoundary'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <CalendarPage />,
-  }, {
-    path: "/admin",
-    element: <AdminMainPage />,
-  }
-]);
+
 
 
 function App() {
