@@ -1,10 +1,8 @@
 import { Box, Button, Container, IconButton, Typography } from '@mui/material'
 import Section from '../components/Section';
 import { DatePicker } from '@mui/x-date-pickers';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import dayjs from 'dayjs'
 import { useState } from 'react';
 
@@ -26,14 +24,6 @@ const weekdays = [
 export default function CalendarPage() {
   const formattedWeekdays = weekdays.map(day => day[0].toUpperCase() + day.slice(1).toLowerCase())
   const [selectedDate, setSelectedDate] = useState(dayjs())
-  const [showCalendar, setShowCalendar] = useState(false)
-  // const prevMonth = dayjs().subtract(1, 'month')
-  // const threeMonthsOut = dayjs().add(3, "month")
-
-  // function handleDatePicker(date: any) {
-  //   setSelectedDate(dayjs(date))
-
-  // }
 
   function handleTodayButton() {
     setSelectedDate(dayjs())
@@ -41,35 +31,25 @@ export default function CalendarPage() {
 
   function handleNavBefore() {
     setSelectedDate(date => dayjs(date).subtract(1, 'week'))
-
   }
 
   function handleNavNext() {
     setSelectedDate(date => dayjs(date).add(1, 'week'))
   }
 
-  function handleShowCalendar() {
-    setShowCalendar(!showCalendar)
-  }
-
 
   return (
     <>
       <Container maxWidth="lg" sx={{ textAlign: "left", marginBottom: 4 }}>
-        <Box display={"flex"} sx={{ justifyContent: "space-between" }}>
+        <Box display={"flex"} sx={{ alignItems: "center", justifyContent: "right" }}>
+          <Button variant="text" sx={{ mr: 2 }} onClick={handleTodayButton}>Today</Button>
           <Box display={"flex"} sx={{ alignItems: "center" }}>
             <IconButton onClick={handleNavBefore}>
               <NavigateBeforeIcon fontSize="large" />
             </IconButton>
-            <Typography component="div">{dayjs(selectedDate).format('MMM D')}</Typography>
+              <DatePicker value={dayjs(selectedDate)} />
             <IconButton onClick={handleNavNext}>
               <NavigateNextIcon fontSize="large" />
-            </IconButton>
-          </Box>
-          <Box display={"flex"} sx={{ alignItems: "center" }}>
-            <Button variant="text" sx={{mr: 2}} onClick={handleTodayButton}>Today</Button>
-            <IconButton onClick={handleShowCalendar}>
-              <CalendarTodayIcon fontSize="large"/>
             </IconButton>
           </Box>
         </Box>
