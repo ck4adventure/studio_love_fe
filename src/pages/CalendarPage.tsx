@@ -5,6 +5,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import dayjs from 'dayjs'
 import { useState } from 'react';
+import { Counter } from '../features/counter/Counter';
 
 // CalendarPage shows the main schedule view for a given studio
 // Default is list view, as this is mobile friendly
@@ -42,6 +43,7 @@ export default function CalendarPage() {
     <>
       <Container maxWidth="lg" sx={{ textAlign: "left", marginBottom: 4 }}>
         <Box display={"flex"} sx={{ alignItems: "center", justifyContent: "right" }}>
+          <Counter />
           <Button variant="text" sx={{ mr: 2 }} onClick={handleTodayButton}>Today</Button>
           <Box display={"flex"} sx={{ alignItems: "center" }}>
             <IconButton onClick={handleNavBefore}>
